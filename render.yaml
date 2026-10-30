@@ -16,6 +16,10 @@ services:
         value: "true"
       - key: DB_PROVEEDOR
         value: supabase
+      # Las columnas de fecha leen DB_MOTOR al cargar las entidades (src/common/db/columns.ts):
+      # sin esto usan "datetime", que PostgreSQL no tiene.
+      - key: DB_MOTOR
+        value: postgres
       - key: ARCHIVOS_PROVEEDOR
         value: supabase
       - key: SEMBRAR_SI_VACIA
